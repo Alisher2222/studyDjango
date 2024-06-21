@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link rel = "stylesheet", href = "{% static 'css/navbar.css' %}">
+</head>
+<body>
+    {% block content%}
+    <div>
+        <div>
+            {% for pet in pets %}
+                <div>
+                    <p><a href = "/dogs.html/{{pet.id}}">{{pet.id}}</a></p>
+                    <p>{{pet.name}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
